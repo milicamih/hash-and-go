@@ -1,0 +1,35 @@
+<p class="close-dialog" (click)="closeDialog()">Zatvori objasnjenje</p>
+<mat-horizontal-stepper linear>
+  <mat-step>
+    <div class="step-content">
+      <p>Nakon sto ste prijavili na aplikaciju sa svojim podacima, otkucajte iznos koji treba naplatiti.
+        Kada ukucate tacan iznos klikom na dugme "PLATI" prelazite na sledeci koraka</p>
+      <img class="logo" src="/assets/img/guiding1.png" alt="logo"/>
+    </div>
+  </mat-step>
+  <mat-step>
+    <div class="step-content">
+      <p>NA ekranu vam se pojavljuje <strong>QR kod</strong> i ispisani tacni podaci za placanje
+        (bitkoin adresa, iznos racuna u dinarima, trenutna cena 1 bitkoina izrazena u dinarima i cena racuna izrazena u
+        bitkoinima)
+        <br> Ako zelite da odustenete od ovog nacina placanja kliknite na dugme "ODUSTANI" <br>
+        Ukoliko zelite da platite na ovaj nacin trebate otvoriti svoj kripto novcanik na telefonu, <strong>Skenirati QR
+          kod </strong> i poslati koine.
+        Kada se koini uspesno posalju i sredstva legnu na zeljenu kripto adresu aplikacija vas automatski vodi na
+        naredni korak.</p>
+      <img src="/assets/img/guiding2.png" alt="logo"/>
+    </div>
+  </mat-step>
+  <mat-step>
+    <div class="step-content">
+      <p>Kada se placanje uspesno zavrsi, mozete da izvrsite novu transakciju klikom na "NOVA TRANSAKCIJA"</p>
+      <img src="/assets/img/guiding3.png" alt="logo"/>
+    </div>
+  </mat-step>
+  <mat-step>
+    <div class="step-content">
+      <p>Na profilu mozete videti statistiku za izvrsene transakcije</p>
+      <img src="/assets/img/guiding4.png" alt="logo"/>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

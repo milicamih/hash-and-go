@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 30px;
+
+  @media (max-width: 600px) {
+    padding: 16px 30px;
+  }
+
+  img {
+    width: 80px;
+    height: auto;
+  }
+}
+
+.username {
+  font-size: 20px;
+
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+::ng-deep {
+  .mat-menu-content {
+    background-color: #00000078;
+  }
+
+  .mat-menu-item {
+    display: flex;
+    align-items: center;
+  }
+}

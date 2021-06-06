@@ -1,0 +1,16 @@
+<div class="auth-logo">
+  <img class="logo" src="/assets/img/logo.png" alt="logo"/>
+</div>
+<div class="auth-container">
+  <h1 class="auth-container-title">
+    <ng-content select="[slot=title]"></ng-content>
+  </h1>
+  <div class="auth-container-content">
+    <ng-content></ng-content>
+  </div>
+  <div class="auth-container-links">
+    <ng-content select="[slot=footer]"></ng-content>
+  </div>
+</div>
+<div class="footer"><small>Powered by ecd.rs</small></div>
+

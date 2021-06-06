@@ -1,0 +1,13 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$primary-clr: mat-palette($mat-orange, 700);
+$accent-clr: mat-palette($mat-orange, 100);
+
+$my-theme : mat-dark-theme($primary-clr, $accent-clr);
+@include angular-material-theme($my-theme);
+
+
+
+

@@ -1,0 +1,60 @@
+<div class="payment-container">
+
+  <ng-container *ngIf="activeStep === 1">
+    <label>Cena:</label>
+    <input class="price-holder" type="number" [(ngModel)]="billValue" readonly>
+    <div class="keyboard">
+      <ng-container *ngFor="let item of [].constructor(9); let i = index">
+        <button class="number-key" (click)="onKeyboardButtonPress(i + 1)">
+          {{i + 1}}
+        </button>
+      </ng-container>
+      <div class="number-key"><img class="bit-img" src="/assets/img/bitcoin.png" alt="logo"/></div>
+      <button class="number-key" (click)="onKeyboardButtonPress(0)">0</button>
+      <button class="number-key" (click)="onClearButtonPress()">CE</button>
+    </div>
+    <button class="payment-button" mat-raised-button color="primary" (click)="onPayButtonPress()">PLATI</button>
+  </ng-container>
+
+  <!--STEP 2-->
+  <ng-container *ngIf="activeStep === 2">
+    <div class="center-container">
+      <h1>Skenirajte QR kod</h1>
+      <qrcode [level]="1" [qrvalue]="link"></qrcode>
+      <div class="pricing-container-1">
+        <a href="">{{link}}</a>
+        <p class="bill-amount">
+          <span>Iznos vaseg racuna:</span>
+          <span>{{billValue}} RSD</span>
+        </p>
+        <p class="bill-amount">
+          <span>Cena bitkoina:</span>
+          <span>{{bitcoinValue}} RSD</span>
+        </p>
+        <mat-spinner [diameter]="50">
+        </mat-spinner>
+        <p class="total-amount">Ukupno: {{billValue / bitcoinValue}} BTC</p>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" class="payment-button" (click)="onStopPayment()">ODUSTANI</button>
+  </ng-container>
+
+  <!--STEP 3-->
+  <ng-container *ngIf="activeStep === 3">
+    <div class="center-container">
+      <h1>Placanje uspesno!</h1>
+      <img class="bit-img" src="/assets/img/yay.png" alt="logo"/>
+      <div class="pricing-container">
+        <p class="bill-amount">
+          <span>Ocekivani iznos:</span>
+          <span>34274863 BTC</span>
+        </p>
+        <p class="bill-amount">
+          <span>Poslati iznos:</span>
+          <span>34274863 BTC</span>
+        </p>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" class="payment-button" (click)="goToNewTransaction()">NOVA TRANSAKCIJA</button>
+  </ng-container>
+</div>

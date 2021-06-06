@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>{{user.firstName}} {{user.lastName}}</h1>
+
+  <p>
+    Ukupno dostupnih
+    <img class="bit-img" src="/assets/img/bitcoin.png" alt="logo"/>&nbsp;:
+    &nbsp;&nbsp;&nbsp;{{user.bitcoins}}
+  </p>
+
+  <div class="progress-container">
+    <div class="spinner-container">
+      <h3>Ukupan broj transakcija:</h3>
+      <p *ngIf="!user.transactionNumber; else transactionsProgress">Nema izvrsenih transakcija</p>
+      <ng-template #transactionsProgress>
+        <circle-progress
+          [percent]="user.transactionNumber"
+          [radius]="100"
+          [showSubtitle]="false"
+          [showUnits]="false"
+          [outerStrokeWidth]="12"
+          [innerStrokeWidth]="8"
+          [outerStrokeColor]="'#f4901a'"
+          [innerStrokeColor]="'#1aedf4'"
+          [titleColor]="'#f4901a'"
+          [titleFontSize]="'50'"
+          [animation]="true"
+          [responsive]="true"
+          [animationDuration]="200"
+        ></circle-progress>
+      </ng-template>
+    </div>
+    <div class="spinner-container">
+      <h3>Ostvaren promet:</h3>
+      <p *ngIf="10 - user.bitcoins === 0; else coinsProgress">Nema izvrsenih transakcija</p>
+      <ng-template #coinsProgress>
+      <circle-progress
+        [percent]="transactionsAmount"
+        [radius]="100"
+        [showUnits]="false"
+        [showTitle]="false"
+        [showSubtitle]="true"
+        [outerStrokeWidth]="12"
+        [innerStrokeWidth]="8"
+        [outerStrokeColor]="'#f4901a'"
+        [innerStrokeColor]="'#1aedf4'"
+        [subtitleColor]="'#f4901a'"
+        [subtitle]="user.transactionAmount.toString()"
+        [subtitleFontSize]="'20'"
+        [animation]="true"
+        [responsive]="true"
+        [animationDuration]="200"
+      ></circle-progress>
+      </ng-template>
+    </div>
+  </div>
+</div>

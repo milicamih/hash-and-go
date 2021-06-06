@@ -1,0 +1,49 @@
+p {
+  color: white;
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
+}
+
+.close-dialog {
+  cursor: pointer;
+  text-align: end;
+}
+
+mat-horizontal-stepper {
+  background-color: black;
+  border: 1px solid grey;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+::ng-deep {
+  @media (max-width: 500px) {
+
+    .mat-horizontal-content-container {
+      padding: 0 !important;
+    }
+    .mat-horizontal-stepper-header {
+      padding: 0 10px !important;
+    }
+  }
+}
+
+.step-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+
+  @media (max-width: 500px) {
+    padding-top: 0;
+  }
+
+  img {
+    max-width: 300px;
+    width: 100%;;
+    height: auto;
+  }
+}

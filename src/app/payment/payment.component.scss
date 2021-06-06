@@ -1,0 +1,151 @@
+.payment-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  border-radius: 5px;
+
+  @media (max-width: 860px) {
+   border: none;
+  }
+}
+
+//Step 1 style
+.price-holder {
+  background-color: white;
+  width: calc(100% - 38px);
+  color: black;
+  padding: 0 16px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  -webkit-box-shadow: 1px 4px 16px 2px #444444;
+  box-shadow: 1px 4px 16px 2px #444444;
+}
+
+label {
+  color: #f4901a;
+  font-size: 1.5em;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  column-gap: 10px;
+  row-gap: 15px;
+  margin: 40px 0 40px;
+  color: white;
+
+  .number-key {
+    border: 1px solid #877d7dab;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2em;
+    -webkit-box-shadow: 1px 4px 16px 2px #444444;
+    box-shadow: 1px 4px 16px 2px #444444;
+
+    &:hover {
+      background-color: #f4901a45;
+    }
+
+    .bit-img{
+      width: 22px;
+      height: auto;
+    }
+  }
+}
+
+.payment-button {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  max-width: 258px;
+  padding: 4px;
+  font-size: 16px;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+}
+
+// Step 2 style
+qrcode {
+  border: 1px solid white;
+  padding: 20px;
+  margin-bottom:  -20px;
+  background-color: black;
+  z-index: 2;
+}
+
+.pricing-container-1 {
+  padding: 40px 20px 10px 20px;
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  background-color: #c64747ab;
+
+
+  mat-spinner {
+    margin: 14px auto;
+  }
+
+  .total-amount {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  a {
+    color: #f4901a;
+    text-align: center;
+    margin-bottom: 34px;
+    display: block;
+  }
+}
+
+// Step 3 style
+.pricing-container {
+  padding: 20px 20px 10px 20px;
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  background-color: #c64747ab;
+  margin: 40px 0;
+}
+
+.center-container {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+}
+
+.bill-amount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}
+
+.bit-img {
+  @media (max-width: 600px) {
+    width: 120px;
+  }
+}

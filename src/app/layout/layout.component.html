@@ -1,0 +1,20 @@
+<header>
+  <a [routerLink]="['/payment']">
+    <img class="bit-img" src="/assets/img/hash&go.svg" alt="logo"/>
+  </a>
+  <div>
+  <button class="username" mat-button [matMenuTriggerFor]="menu">{{user.username}}
+    <mat-icon>expand_more</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="goToProfile()">
+        <mat-icon>account_circle</mat-icon>Profil
+      </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      Izloguj se
+    </button>
+  </mat-menu>
+  </div>
+</header>
+<router-outlet></router-outlet>

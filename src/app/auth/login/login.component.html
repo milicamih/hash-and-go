@@ -1,0 +1,28 @@
+<auth-wrapper>
+  <span slot="title">ULOGUJTE SE</span>
+
+  <div class="form-wrapper">
+    <form [formGroup]="signInForm" class="sign-up-form">
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Korisnicko ime</mat-label>
+        <input matInput type="text" formControlName="username" autocomplete="off">
+        <mat-error *ngIf="f.username.errors?.required">Korisnicko ime je obavezna</mat-error>
+        <mat-error *ngIf="f.username.errors?.minlength">Minimalna duzina korisnickog imena je {{f.username.errors.minlength.requiredLength}} karaktera</mat-error>
+        <mat-error *ngIf="f.username.errors?.maxlength">Maksimalna duzina korisnickog imena je {{f.username.errors.maxlength.requiredLength}} karaktera</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Sifra</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" autocomplete="off">
+        <mat-error *ngIf="f.password.errors?.required">Sifraa je obavezna</mat-error>
+        <mat-error *ngIf="f.password.errors?.minlength">Minimalna duzina sifre je {{f.password.errors.minlength.requiredLength}} karaktera</mat-error>
+        <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="onLogin()">PRIJAVA</button>
+    </form>
+  </div>
+
+  <div slot="footer">
+    <span>Nemate nalog? / <a [routerLink]="['/sing-up']">Registrujte se</a></span>
+  </div>
+</auth-wrapper>
+
