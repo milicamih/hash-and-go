@@ -1,8 +1,8 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { UserService } from '../shared/services/user.service';
 import { SnackbarService } from '../shared/services/snackbar.service';
 import { User } from '../shared/models/user.model';
-import { BitcoinValue } from '../shared/helpers/bitcoin-cours.constanc';
+import { BitcoinInDinars } from '../shared/consts/bitcoin-cours.const';
 
 @Component({
   selector: 'app-payment',
@@ -17,7 +17,7 @@ export class PaymentComponent implements OnInit {
   link = '';
   numbers = /^[0-9]+$/;
 
-  bitcoinValue = BitcoinValue;
+  bitcoinValue = BitcoinInDinars;
 
   @HostListener('document:keypress', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {

@@ -20,7 +20,7 @@ export class AuthService {
               private userService: UserService) { }
 
   logout(): void {
-    this.userService.updateCurrentUser(null);
+    this.userService.setCurrentUser(null);
     this.router.navigate(['./login']);
   }
 
@@ -43,8 +43,8 @@ export class AuthService {
       transactionAmount: 0,
     };
     users.push(newUser);
-    this.localStorageService.saveUsersData(users);
-    this.userService.updateCurrentUser(newUser);
+    this.localStorageService.saveUsers(users);
+    this.userService.setCurrentUser(newUser);
 
     this.snackbar.openSnackBar('Uspesno ste se registrovali', 'success-snackbar');
     this.dialog.open(GuidingComponent);
@@ -62,7 +62,7 @@ export class AuthService {
       this.snackbar.openSnackBar('Uneli ste neispravno korisnicko ime ili sifru', 'error-snackbar');
     }
 
-    this.userService.updateCurrentUser(existingUser);
+    this.userService.setCurrentUser(existingUser);
     this.router.navigate(['./payment']);
   }
 }

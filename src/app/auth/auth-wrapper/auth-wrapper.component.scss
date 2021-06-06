@@ -19,6 +19,7 @@ auth-wrapper {
     .logo {
       max-height: 72px;
       max-width: 100%;
+      box-sizing: border-box;
     }
   }
 }

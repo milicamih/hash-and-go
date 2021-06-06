@@ -102,6 +102,10 @@ qrcode {
   .total-amount {
     font-size: 18px;
     text-align: center;
+
+    @media (max-width: 600px) {
+      font-size: 14px;
+    }
   }
 
   a {

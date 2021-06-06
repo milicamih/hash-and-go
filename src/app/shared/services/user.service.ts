@@ -6,7 +6,7 @@ import {LocalStorageService} from './local-storage.service';
   providedIn: 'root'
 })
 export class UserService {
-  currentUser: User = null;
+  private currentUser: User = null;
 
   constructor(private localStorageService: LocalStorageService) { }
 
@@ -19,7 +19,7 @@ export class UserService {
     const userIndex = users.findIndex(item => item.username === user.username);
     const updatedUser = this.updateUser(users[userIndex], spentDinars, spentCoins);
     this.updateUser(user, spentDinars, spentCoins);
-    this.localStorageService.saveUsersData([
+    this.localStorageService.saveUsers([
              ...users,
              users[userIndex] = updatedUser
   ]);
@@ -35,7 +35,7 @@ export class UserService {
     };
   }
 
-  updateCurrentUser(user: User) {
+  setCurrentUser(user: User) {
     this.currentUser = user;
   }
 }

@@ -9,7 +9,7 @@ export class LocalStorageService {
   constructor() { }
 
 
-  public saveUsersData(users: User[]) {
+  public saveUsers(users: User[]) {
     localStorage.setItem('users', JSON.stringify(users));
   }
 
